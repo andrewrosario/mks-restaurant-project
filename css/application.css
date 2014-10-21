@@ -4,16 +4,17 @@
 
 body {
     margin: 0;
-    /* TODO use the Google Font 'Bitter' */
+    font-family: Bitter;
     font-size: 100%;
 }
 
 div, h1, h2, h3, h4, h5, h6, p, ul, ol, a {
-    /* TODO because we are using Foundation, we have to override Foundation's default font family. Use the Google Font 'Bitter' here. */
+    font-family: Bitter;
 }
 
 h1, h2, h3, h4, h5, h6 {
     /* TODO make the font color of all our headers #fffdf0 */
+    color: #fffdf0;
 }
 
 /* ---------------------------------------------- */
@@ -25,19 +26,29 @@ header {}
 header h1 {
     /* TODO make the font size larger than Foundation's default; I uesd 4.5em */
     /* TODO add a text-shadow on the h1 using rgba(34, 28, 18,.75) */
+    font-size: 4.5em;
+    text-shadow: rgba(34, 28, 18,.75);
 }
 
 header .tagline h4 {
     /* TODO make the tagline italic; you'll have to work hard to override Foundation's font-style: normal on all headers! */
     /* TODO add the same text-shadow */
+    font-style: italic;
+    text-shadow: rgba(34, 28, 18,.75);
 }
 
 header .tagline {
     /* TODO center the text */
+    text-align: center;
     background: rgba(34, 28, 18,.5); /* I added this transparent background bar for you. */
     /* TODO add some padding to give it space around the text */
+    padding: 10px;
     /* TODO absolutely position the tagline bar at top: 35%. add a width so that it goes all the way across. */
+    width: 100%;
+    position: absolute;
+    top: 35%;
     /* TODO when you make the slideshow work, the tagline will get hidden. why? what line of CSS do you have to write to make it appear ABOVE the slideshow? */
+    z-index: 1;
 }
 
 
@@ -60,15 +71,23 @@ section {
 
 .address {
     /* TODO give this section a background of #221c12 and a color of #fffdf0. make the text centered */
+    background: #221c12;
+    color: #fffdf0;
+    text-align: center;
 }
 
 .location,
 .hours {
     /* TODO give these two divs some padding so that they line up with the map */
+    padding-top: 100px;
 }
 
-.hours-label { /* TODO style these with the appropriate font styles (bold/italic) */ }
-.hours-value { /* TODO style these with the appropriate font styles (bold/italic) */ }
+.hours-label { 
+    font-weight: bold;
+ }
+.hours-value { 
+    font-style: italic;
+ }
 
 
 
@@ -78,24 +97,42 @@ section {
 
 .menu {
     /* TODO give this section a color of #221c12 and a background of #fffdf0. give it some bottom padding so there's space below the text. */
+    color: #221c12;
+    background: #fffdf0;
+    padding-bottom: 0px;
 }
 
 .menu h2 {
     /* TODO make this font size larger than the Foundation default */
+    font-size: 
 }
 
 .menu h2, .menu h3, .menu h4 {
     /* TODO give these headers a color of #221c12 */
+    color: #221c12;
+    text-align: center;
+
 }
 
+.menu-section h2 {
+    text-align: center;
+}
 
 /* TODO center the text of the h2 and menu-section */
 
 .menu-section h3 a {
     /* TODO make menu section links a semi-transparent color rgba(34, 28, 18, .75). give them a 3px bottom border and give it a bit of space */
     /* TODO give the menu section links a CSS transition so that when you hover them, the color fades in slowly */
+    color: rgba(34, 28, 18, .75);
+    border-bottom: 3px solid black;
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
 }
 
+.menu-section h3 a:hover {
+    /* TODO make menu section links a semi-transparent color rgba(34, 28, 18, .75). give them a 3px bottom border and give it a bit of space */
+    /* TODO give the menu section links a CSS transition so that when you hover them, the color fades in slowly */
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
 
 /* TODO on the menu section links, when hovered, make them the same color but 100% opacity instead of 75% (.75) and make the bottom border the same color. */
 
