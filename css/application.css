@@ -124,32 +124,54 @@ section {
     /* TODO make menu section links a semi-transparent color rgba(34, 28, 18, .75). give them a 3px bottom border and give it a bit of space */
     /* TODO give the menu section links a CSS transition so that when you hover them, the color fades in slowly */
     color: rgba(34, 28, 18, .75);
-    border-bottom: 3px solid black;
-    transition: width 2s, height 2s, background-color 2s, transform 2s;
+    /*border-spacing: 5px;*/
+    border-bottom: 4px solid transparent;
+    transition: color .5s ease, border-color .5s ease;
 }
 
 .menu-section h3 a:hover {
-    /* TODO make menu section links a semi-transparent color rgba(34, 28, 18, .75). give them a 3px bottom border and give it a bit of space */
-    /* TODO give the menu section links a CSS transition so that when you hover them, the color fades in slowly */
-    transition: width 2s, height 2s, background-color 2s, transform 2s;
+    color: rgba(34, 28, 18, 1);
+    border-color: rgba(34, 28, 18, 1);
 }
 
 /* TODO on the menu section links, when hovered, make them the same color but 100% opacity instead of 75% (.75) and make the bottom border the same color. */
 
+
 /* TODO on the ACTIVE menu section links, make them look the same as hovered ones. How do you know if they are active? */
+.active h3 a {
+    border-bottom: 4px solid rgba(34, 28, 18, 1);
+    color: rgba(34, 28, 18, 1);
+}
 
 .menu-section-content {
     /* TODO give this some space below the menu links */
+    padding-bottom: 20px;
 }
 
 
 .menu-item {
     /* TODO give each menu item some bottom margin */
+    margin-bottom: 15px;
 }
 
 /* TODO style the menu-item-dish to be bold */
+.menu-item-dish {
+    font-weight: bold;
+}
 
 /* TODO style the menu-item-ingredients to be italic and be in one line with the price. You don't need to use Foundation classes to do this, but if you want to try and see, go for it! */
+.menu-item-ingredients {
+    font-style: italic;
+    display: inline;
+}
+
+.menu-item-price {
+    display: inline;
+    font-weight: bold;
+    opacity: .5;
+    padding-left: 10px;
+}
+
 
 /* TODO style the menu-item-price to be bold, 50% opacity, in line with the description but have some space to the left of it. */
 
@@ -165,6 +187,27 @@ section {
 .contact {
     /* TODO add the dark brown background color, and the background image symbols-bottom. Change the background-position so that the bottom of it shows (where the symbols start to fade out). */
     /* TODO add some top and bottom padding so that the content doesn't overlap the background image. Note how the padding changes the location of the background image. */
+    background: #221c12;
+    color: #fffdf0;
+    background-image: url('../images/symbols-bottom.png');
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-position: 0% 99%
 }
 
 /* TODO make the .social-links links be displayed in a row with some space between them. make them 50% opacity, and fade to 100% opacity when you hover over them. */
+.social-links a {
+    display: inline-block;
+    margin: 20px;
+    opacity: .5;
+    transition: opacity .5s;
+}
+
+.social-links a:hover {
+    opacity: 1;
+}
+
+.social, .email, .press h5 {
+    text-align: center;
+}
+
