@@ -193,7 +193,8 @@ section {
     background-image: url('../images/symbols-bottom.png');
     padding-top: 100px;
     padding-bottom: 100px;
-    background-position: 0% 99%
+    background-position: 0px -250px;
+    background-repeat: no-repeat;
 }
 
 /* TODO make the .social-links links be displayed in a row with some space between them. make them 50% opacity, and fade to 100% opacity when you hover over them. */
@@ -210,5 +211,9 @@ section {
 
 .social, .email, .press h5 {
     text-align: center;
+}
+
+.wineList {
+    display: inline;
 }
 
