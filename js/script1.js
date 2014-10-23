@@ -1,40 +1,14 @@
 $(function() {
 
-    // TODO #1 Set an event listener to listen for clicks on each menu section
-    // heading anchor
-    // $(".document").on('click', '.menu-section-item')
-
-    // Note: my menu section headings look like this:
-    //
-    // <div class="menu-section">
-    //   <h3>
-    //     <a href="#" class="menu-section-item" id="dinner">
-    //       Dinner
-    //     </a>
-    //   </h3>
-    //   ...
-
-    // I've given all of the anchors the same class so that I can easily target
-    // all of them with jQuery
-
-    $( document ).on( 'click', '.menu-section-item', function( event ) {
-      // Prevent the default action of the event
-      event.preventDefault();
-
-      // Assign the id of the clicked element (this) to a variable named id
-      var id = $( this );
-
-      // Remove the class 'is-active' from all menu item headings
-      $( '.menu-section-item' ).removeClass( 'active' );
-
-      // Add 'is-active' to this specific action that was clicked (this). is-active
-      // provides the visual cue for what's active via CSS
-      $( this ).addClass( 'active' );
-
-      // Once you're started with TODO #2, call the getMenu function here,
-      // passing id as the argument
-      console.log("id")
-    });
+  $(document).on( 'click', '.menu-section', function(event) {
+        event.preventDefault();
+        $( '.menu-section' ).removeClass( 'active' );
+        $( this ).addClass( 'active' );
+        console.log("good")
+        var id = $(this).attr("id");
+        console.log(id);
+        getMenu(id);
+      });
 
 
 
@@ -54,12 +28,13 @@ $(function() {
     function getMenu( course ) {
      // Use `$.getJSON` to get the menu for whatever menu heading was clicked
      $.getJSON( './json/menu-' + course + '.json', function( json ) {
+
+        // console.log(json);
        populateMenu( json );
        // Once you're started with TODO #3, call the populateMenu function here
        // and pass json as the argument
      });
     }
-
 
 
 
@@ -85,9 +60,9 @@ $(function() {
           html += '<div class="menu-item">';
           // inside each menu-item div, create a div for dish, ingredients, and price
           // add json[i]content[j].THING where THING is dish, ingredient, price.
-          html += '<div class="menu-item-dish">' + json[i].content[j]. + '</div>';
-          html += '<p class="menu-item-ingredients">' + json[i].content[j]. + '</p>';
-          html += '<div class="menu-item-price">' + json[i].content[j]. + '</div>';
+          html += '<div class="menu-item-dish">' + json[i].content[j].dish + '</div>';
+          html += '<p class="menu-item-ingredients">' + json[i].content[j].ingredients + '</p>';
+          html += '<div class="menu-item-price">' + json[i].content[j].price + '</div>';
           html += '</div>';
         }
 

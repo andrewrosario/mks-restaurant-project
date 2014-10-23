@@ -127,6 +127,7 @@ section {
     /*border-spacing: 5px;*/
     border-bottom: 4px solid transparent;
     transition: color .5s ease, border-color .5s ease;
+    font-size: 1em;
 }
 
 .menu-section h3 a:hover {
